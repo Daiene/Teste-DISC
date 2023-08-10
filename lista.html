@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste DISC - DSM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Teste DISC - DSM</h1>
+  <div class="classification">
+    <p class="green">Dominância (D)</p>
+    <p class="red">Influência (I)</p>
+    <p class="blue">Estabilidade (S)</p>
+    <p class="yellow">Complacência (C)</p>
+  </div>
+  <table>
+    <tr class="first-child">
+      <td>Nome do aluno</td>
+      <td>Letra no disc</td>
+    </tr>
+    
+    <script>
+      const alunos = [
+        { nome: "Alexandre Roberto", letra: "C" },
+        { nome: "Daiene Batagioti", letra: "C" },
+        { nome: "Davi Maciel", letra: "S" },
+        { nome: "Diogo", letra: "D" },
+        { nome: "Eber", letra: "S" },
+        { nome: "Erik", letra: "D" },
+        { nome: "Erika", letra: "S" },
+        { nome: "Fábio Kenjy", letra: "S"},
+        { nome: "Henrique", letra: "S"},
+        { nome: "João Gabriel", letra: "S" },
+        { nome: "Jonas", letra: "S" },
+        { nome: "Joyce", letra: "C" },
+        { nome: "Kathellyn", letra: "C" },
+        { nome: "Leonardo Parra", letra: "S" },
+        { nome: "Michael", letra: "I" },
+        { nome: "Savio", letra: "D" },
+        { nome: "Talita", letra: "S" },
+        { nome: "Yuri", letra: "S" },
+      ];
+
+      function criarLinhas() {
+        const tabela = document.querySelector("table");
+        alunos.forEach(aluno => {
+          const linha = document.createElement("tr");
+          const colunaNome = document.createElement("td");
+          const colunaLetra = document.createElement("td");
+          colunaNome.textContent = aluno.nome;
+          colunaLetra.textContent = aluno.letra;
+
+          if (aluno.letra === "D") {
+            colunaLetra.classList.add("text-green");
+          } else if (aluno.letra === "I") {
+            colunaLetra.classList.add("text-red");
+          } else if (aluno.letra === "S") {
+            colunaLetra.classList.add("text-blue");
+          } else if (aluno.letra === "C") {
+            colunaLetra.classList.add("text-yellow");
+          }
+
+          linha.appendChild(colunaNome);
+          linha.appendChild(colunaLetra);
+          tabela.appendChild(linha);
+        });
+      }
+
+      criarLinhas();
+    </script>
+  </table>
+</body>
+</html>
