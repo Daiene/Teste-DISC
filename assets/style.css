@@ -18,6 +18,7 @@ table {
   width: 70%;
   margin-top: 10px;
   table-layout: fixed;
+  margin-bottom: 50px;
 }
 
 th, td {
